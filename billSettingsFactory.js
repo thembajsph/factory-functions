@@ -2,57 +2,57 @@
 
 function billWithSettings() {
     var theCallCost = 0;
-    var theSmsCost = 0; 
+    var theSmsCost = 0;
     var theWarningLevel = 0;
     var theCriticalLevel = 0;
     var callCostTotal = 0;
     var smsCostTotal = 0;
 
-function setCallCost(callCost) {
-    theCallCost = callCost;
-};
-
-function getCallCost() {
-    return theCallCost;
-};
-
-function setSmsCost(smsCost) {
-theSmsCost = smsCost;
-};
-
- function getSmsCost() {
-return theSmsCost;
-
-};
-
-function setWarningLevel(warningLevel) {
-theWarningLevel = warningLevel;
-
-};
-
-function getWarningLevel() {
-return theWarningLevel;
-};
-
-function setCriticalLevel(criticalLevel) {
-    theCriticalLevel = criticalLevel;
-    
+    function setCallCost(callCost) {
+        theCallCost = callCost;
     };
-    
+
+    function getCallCost() {
+        return theCallCost;
+    };
+
+    function setSmsCost(smsCost) {
+        theSmsCost = smsCost;
+    };
+
+    function getSmsCost() {
+        return theSmsCost;
+
+    };
+
+    function setWarningLevel(warningLevel) {
+        theWarningLevel = warningLevel;
+
+    };
+
+    function getWarningLevel() {
+        return theWarningLevel;
+    };
+
+    function setCriticalLevel(criticalLevel) {
+        theCriticalLevel = criticalLevel;
+
+    };
+
     function getCriticalLevel() {
-    return theCriticalLevel;
+        return theCriticalLevel;
     };
 
     function makeCall() {
         //havent reached the critical level
 
-        if(hasReachCriticalLevel()) {
+        if (hasReachCriticalLevel()) {
             callCostTotal += theCallCost;
         }
-        
+
     };
 
-    function getTotalCost(){
+    function getTotalCost() {
         return callCostTotal + smsCostTotal;
     };
 
@@ -68,8 +68,8 @@ function setCriticalLevel(criticalLevel) {
         if (hasReachCriticalLevel()) {
             smsCostTotal += theSmsCost;
         }
-      
-        
+
+
     };
     //instead of doing this over and over create a reach critical function
 
@@ -80,32 +80,32 @@ function setCriticalLevel(criticalLevel) {
     function totalClassName() {
         if (hasReachCriticalLevel()) {
             return "critical"
-         }
-
-         if (getTotalCost() >= getWarningLevel()) {
-            return "warning"
-        
         }
-    } ; 
 
-        
+        if (getTotalCost() >= getWarningLevel()) {
+            return "warning"
 
-return {
-    
-    setCallCost,
-    getCallCost,
-    setSmsCost,
-    getSmsCost,
-    setWarningLevel,
-    getWarningLevel,
-    setCriticalLevel,
-    getCriticalLevel,
-    makeCall,
-    getTotalCost,
-    getTotalCallCost,
-    getTotalSmsCost,
-    sendSms,
-    totalClassName, 
-    hasReachCriticalLevel
-};
+        }
+    };
+
+
+
+    return {
+
+        setCallCost,
+        getCallCost,
+        setSmsCost,
+        getSmsCost,
+        setWarningLevel,
+        getWarningLevel,
+        setCriticalLevel,
+        getCriticalLevel,
+        makeCall,
+        getTotalCost,
+        getTotalCallCost,
+        getTotalSmsCost,
+        sendSms,
+        totalClassName,
+        hasReachCriticalLevel
+    };
 };
