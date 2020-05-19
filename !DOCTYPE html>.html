@@ -1,0 +1,47 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factory function Mocha testing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    
+</head>
+
+<body>
+<div id="mocha">
+    <script>
+    mocha.setup("bdd");
+    var assert = chai.assert;
+    </script>
+
+<script src="factoryBuildingBlocks.js.js" charset="utf-8"></script>
+//- followed by the tests -->
+//<script src="test/factoryBuildingBlocks.tests.js" charset="utf-8"></script>
+
+
+<script src="billSettingsFactory.js" charset="utf-8"></script>
+
+//-- followed by the tests -->
+//<script src="test/billSettingsFactory.tests.js" charset="utf-8"></script>
+
+
+
+    <script src="billSettingDescribe.js" charset="utf-8"></script>
+
+    //-- followed by the tests -->
+//<script src="test/billSettingDescribe.tests.js" charset="utf-8"></script>
+
+   
+   <script>
+    <mocha.checkLeaks();
+    mocha.run();
+</script>
+
+</div>  
+</body>
+</html>
