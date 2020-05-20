@@ -68,11 +68,11 @@ assert.equal(30, settingBill.getCriticalLevel());
 
 //now we need to set the price / using the price & setting totals
 
-//describe("use values", function() {
+describe("use values", function() {
     
-   // it("should be able to use the call cost set ", function()  {
-     //   let settingBill = billWithSettings();
-     //   settingBill.setCriticalLevel(10);
+    it("should be able to use the call cost set ", function()  {
+        let settingBill = billWithSettings();
+        settingBill.setCriticalLevel(10);
 
    settingBill.setCallCost(2.25);
     settingBill.setSmsCost(0.85);
