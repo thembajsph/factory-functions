@@ -46,7 +46,7 @@ function billWithSettings() {
     function makeCall() {
         //havent reached the critical level
 
-        if (hasReachCriticalLevel()) {
+      if (hasReachedCriticalLevel()) {
             callCostTotal += theCallCost;
         }
 
@@ -65,20 +65,19 @@ function billWithSettings() {
     };
 
     function sendSms() {
-        if (hasReachCriticalLevel()) {
+        if (hasReachedCriticalLevel()) {
             smsCostTotal += theSmsCost;
         }
 
 
-    };
+   };
     //instead of doing this over and over create a reach critical function
-
-    function hasReachCriticalLevel() {
-        return getTotalCost >= getCriticalLevel();
+   function hasReachedCriticalLevel() {
+        return getTotalCost() <= getCriticalLevel();
     };
-
+    
     function totalClassName() {
-        if (hasReachCriticalLevel()) {
+        if (getTotalCost() >= getCriticalLevel()) {
             return "critical"
         }
 
@@ -87,6 +86,7 @@ function billWithSettings() {
 
         }
     };
+   
 
 
 
@@ -105,7 +105,7 @@ function billWithSettings() {
         getTotalCallCost,
         getTotalSmsCost,
         sendSms,
-        totalClassName,
-        hasReachCriticalLevel
+        hasReachedCriticalLevel,
+        totalClassName
     };
 };
